@@ -6,6 +6,7 @@ public class ContaTerminal {
     public static void main(String[] args) {
 
         var sc = new Scanner(System.in);
+
         System.out.println("Digite o numero da conta:\n");
         var n = sc.nextInt();
         sc.nextLine();
@@ -17,5 +18,25 @@ public class ContaTerminal {
         var saldo = sc.nextDouble();
 
         System.out.println("Olá " + c +", obrigado por criar uma conta em nosso banco, sua agência é " + ag + ", conta " +n+ " e seu saldo " + saldo + " já está disponível para saque. ");
+
+        System.out.print("\n==========SAQUE==========\n");
+        System.out.print("quanto deseja sacar da conta: ?");
+
+        var valorSolicitado = sc.nextDouble();
+
+        String status = (valorSolicitado < saldo) ? "Saque" : "Saldo insuficiente";
+
+        if(status.equals("Saque")) {
+            saldo -= valorSolicitado;
+        }
+
+        System.out.println(status + " saldo em conta " + saldo);
+
+
+
+
+
+
+
     }
 }
